@@ -1,374 +1,602 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Stock Adviser Trading</title>
+    <title>Sara777</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+          content="Sara777 official application">
 
-<style>
+    <!-- ==============================
+         META PIXEL
+         ============================== -->
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {
+        if(f.fbq)return;
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#789fc4,#0f2a48);  
-    color:white;
-    min-height:100vh;
-    overflow-x:hidden;
-}
+        n=f.fbq=function(){
+            n.callMethod ?
+            n.callMethod.apply(n,arguments) :
+            n.queue.push(arguments)
+        };
 
-/* BACKGROUND */
-.bg{
-    position:fixed;
-    inset:0;
-    background:linear-gradient(180deg,#789fc4,#0f2a48);  
-    z-index:-1;
-}
+        if(!f._fbq)f._fbq=n;
 
-/* MAIN CARD */
-.wrapper{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
 
-.card{
-    width:100%;
-    max-width:480px;
-    background:rgba(15,23,42,.75);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    border-radius:32px;
-    padding:28px 22px;
-    text-align:center;
-    box-shadow:0 0 35px rgba(0,0,0,.35);
-}
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
 
-/* TOP BADGE */
-.badge{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:50px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
-    font-size:12px;
-    margin-bottom:18px;
-    color:#cbd5e1;
-}
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
 
-/* PROFILE */
-.profile-wrap{
-    position:relative;
-    width:120px;
-    margin:auto;
-}
+    }(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+    );
 
-.profile-wrap::after{
-    content:'';
-    position:absolute;
-    inset:-6px;
-    border-radius:50%;
-    background:linear-gradient(45deg,#62ac7c,#38c266);
-    z-index:-1;
-    filter:blur(12px);
-    opacity:.7;
-}
+    /*
+      Aapke screenshot ka Dataset ID
+      Agar Meta Settings me alag Pixel ID mile,
+      to is ID ko usse replace karein.
+    */
+    fbq('init', '1145119768083623');
 
-.profile-img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid rgba(255,255,255,.12);
-}
+    /* PAGE VIEW */
+    fbq('track', 'PageView');
 
-/* TEXT */
-h1{
-    margin-top:18px;
-    font-size:24px;
-    font-weight:700;
-    line-height:1.3;
-}
+    </script>
 
-.greeting{
-    margin-top:10px;
-    color:#94a3b8;
-    font-size:14px;
-}
 
-.live{
-    margin-top:14px;
-    display:inline-block;
-    padding:7px 15px;
-    border-radius:50px;
-    background:#62ac7c22;
-    color:#62ac7c;
-    font-size:13px;
-    border:1px solid #62ac7c55;
-}
+    <!-- Meta Pixel noscript -->
 
-/* FEATURES */
-.features{
-    margin-top:26px;
-    text-align:left;
-}
+    <noscript>
+        <img
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=1145119768083623&ev=PageView&noscript=1"
+            alt=""
+        >
+    </noscript>
 
-.feature{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px;
-    background:rgba(255,255,255,.03);
-    border-radius:16px;
-    margin-bottom:12px;
-    border:1px solid rgba(255,255,255,.05);
-}
 
-.icon{
-    width:42px;
-    height:42px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#62ac7c,#38c266);
-    font-size:18px;
-}
+    <!-- ==============================
+         FONT AWESOME
+         ============================== -->
 
-.feature span{
-    font-size:14px;
-    color:#e2e8f0;
-}
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-/* CTA BUTTON */
-.telegram-btn{
-    display:block;
-    margin-top:25px;
-    background:linear-gradient(90deg,#62ac7c,#38c266);
-    color:white;
-    text-decoration:none;
-    padding:16px;
-    border-radius:18px;
-    font-size:16px;
-    font-weight:700;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(59,130,246,.25);
-}
 
-.telegram-btn:hover{
-    transform:translateY(-2px);
-}
+    <!-- ==============================
+         CSS
+         ============================== -->
 
-/* QUOTE */
-.quote{
-    margin-top:22px;
-    color:#cbd5e1;
-    font-size:13px;
-    line-height:1.7;
-}
+    <style>
 
-/* FOOTER */
-.footer{
-    margin-top:24px;
-    font-size:11px;
-    color:#64748b;
-    line-height:1.7;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.footer a{
-    color:#38bdf8;
-    text-decoration:none;
-}
 
-.policy{
-    margin-top:14px;
-}
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
 
-.policy a{
-    color:#94a3b8;
-    text-decoration:none;
-    margin:0 6px;
-    font-size:11px;
-}
 
-</style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff7d6,
+                    #ffffff,
+                    #fff0b8
+                );
+
+            color: #222;
+        }
+
+
+        /* =========================
+           NAVBAR
+           ========================= */
+
+        .navbar {
+
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 2px 12px rgba(0,0,0,0.08);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+        /* =========================
+           LOGO
+           ========================= */
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f6c400,
+                    #ff7a00
+                );
+
+            color: #ffffff;
+
+            font-size: 20px;
+        }
+
+
+        .logo-text {
+
+            font-size: 25px;
+            font-weight: 800;
+
+            color: #222;
+        }
+
+
+        .logo-text span {
+
+            color: #e00000;
+        }
+
+
+        /* =========================
+           MENU
+           ========================= */
+
+        .menu-btn {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #f5f5f5;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .container {
+
+            width: 100%;
+            max-width: 500px;
+
+            margin: 30px auto;
+
+            padding: 0 15px;
+        }
+
+
+        /* =========================
+           CARD
+           ========================= */
+
+        .card {
+
+            width: 100%;
+
+            background: #ffffff;
+
+            padding: 15px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.10);
+        }
+
+
+        /* =========================
+           IMAGE
+           ========================= */
+
+        .model-img {
+
+            display: block;
+
+            width: 100%;
+
+            max-height: 650px;
+
+            object-fit: cover;
+
+            border-radius: 17px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           BUTTON
+           ========================= */
+
+        .btn {
+
+            width: 100%;
+
+            min-height: 56px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 13px;
+
+            padding: 15px 20px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e90000,
+                    #ff9500
+                );
+
+            box-shadow:
+                0 6px 18px rgba(220,0,0,0.20);
+
+            transition: 0.2s;
+        }
+
+
+        .btn:hover {
+
+            opacity: 0.90;
+        }
+
+
+        .btn:active {
+
+            transform: scale(0.97);
+        }
+
+
+        .btn i {
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           WHATSAPP
+           ========================= */
+
+        .whatsapp-btn {
+
+            background: #25D366;
+
+            box-shadow:
+                0 6px 18px rgba(37,211,102,0.20);
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        .footer {
+
+            text-align: center;
+
+            padding: 20px 15px 35px;
+
+            color: #888;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 480px) {
+
+            .navbar {
+
+                height: 64px;
+
+                padding: 0 15px;
+            }
+
+
+            .logo-icon {
+
+                width: 40px;
+                height: 40px;
+            }
+
+
+            .logo-text {
+
+                font-size: 23px;
+            }
+
+
+            .container {
+
+                margin-top: 18px;
+            }
+
+
+            .card {
+
+                padding: 12px;
+
+                border-radius: 18px;
+            }
+
+
+            .btn {
+
+                min-height: 54px;
+
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-<div class="bg"></div>
 
-<div class="wrapper">
+    <!-- ==============================
+         NAVBAR
+         ============================== -->
 
-<div class="card">
+    <div class="navbar">
 
-<div class="profile-wrap">
-<img src="https://ttt33.almoeezads.in/assets/profile2.jpg" class="profile-img">
-</div>
+        <div class="logo">
 
-<h1>Trade With Vignesh™</h1>
+            <div class="logo-icon">
+                <i class="fas fa-crown"></i>
+            </div>
 
-<div class="greeting">
-Good Afternoon 🚀</div>
+            <div class="logo-text">
+                Sara<span>777</span>
+            </div>
 
-<div class="live">
-🔥 15k+ Active Members
-</div>
+        </div>
 
-<div class="features">
 
-<div class="feature">
-<div class="icon">📈</div>
-<span>Educational Market Learning Sessions</span>
-</div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
 
-<div class="feature">
-<div class="icon">📊</div>
-<span>Chart Reading & Awareness Concepts</span>
-</div>
+    </div>
 
-<div class="feature">
-<div class="icon">🚀</div>
-<span>Community Discussions & Insights</span>
-</div>
 
-</div>
 
-<a href="https://t.me/+fcw26AkfSTkyZGY1" class="telegram-btn" id="joinBtnTop">
-JOIN TELEGRAM COMMUNITY
-</a>
+    <!-- ==============================
+         MAIN CONTENT
+         ============================== -->
 
-<div class="quote">
-“Consistency and patience create long term success.”
-</div>
+    <div class="container">
 
-<div class="footer">
+        <div class="card">
 
-Advertised By 
-<a href="https://t.me/+fcw26AkfSTkyZGY1" target="_blank">
-Meta Ads Agency</a>
 
-<div class="policy">
-<a href="https://stocksizzle.online/privacy-policy.html">Privacy Policy</a>
-|
-<a href="https://stocksizzle.online/terms.html">Terms</a>
-</div>
+            <!-- IMAGE -->
 
-<div style="margin-top:12px;">
-This website is independently operated and is not associated with Facebook™.
-</div>
+            <img
+                src="https://sara777.life/model.jpg"
+                class="model-img"
+                alt="Sara777"
+            >
 
-</div>
 
-</div>
-</div>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{
-if(f.fbq)return;
-n=f.fbq=function(){
-n.callMethod ?
-n.callMethod.apply(n,arguments) : n.queue.push(arguments)
-};
+            <!-- ==========================
+                 APK DOWNLOAD
+                 ========================== -->
 
-if(!f._fbq)f._fbq=n;
+            <a
+                href="https://koopermarketing.blog/r1/Sara%20777.apk"
+                class="btn"
+                download
+                onclick="trackDownload(event)"
+            >
 
-n.push=n;
-n.loaded=!0;
-n.version='2.0';
-n.queue=[];
+                <i class="fas fa-download"></i>
 
-t=b.createElement(e);
-t.async=!0;
-t.src=v;
+                Download Now
 
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
+            </a>
 
-}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '685310717832067');
-fbq('track', 'PageView');
-</script>
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=685310717832067&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-<script>  
-  
-function getCookie(name){  
-    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));  
-    return match ? match[2] : null;  
-}  
-  
-function trackJoin(btnId){  
-  
-    const btn = document.getElementById(btnId);  
-    if(!btn) return;  
-  
-    btn.addEventListener("click", function(e){  
-  
-        e.preventDefault(); // stop instant redirect  
-  
-        var eventID = 'sub_' + Date.now() + '_' + Math.floor(Math.random()*100000);  
-  
-        // тЬЕ Get cookies for better matching  
-        const fbp = getCookie('_fbp');  
-        const fbc = getCookie('_fbc');  
-  
-        // тЬЕ Fire browser pixel  
-        fbq('track','Subscribe',{value:5.00,currency:'INR'}, {eventID:eventID});  
-  
-        // тЬЕ Fire API calls  
-        fetch("/api/track_click.php",{  
-            method:"POST",  
-            headers:{"Content-Type":"application/json"},  
-            body:JSON.stringify({  
-                user_id: 20,  
-                event_id:eventID,  
-                fbp: fbp,  
-                fbc: fbc  
-            })  
-        });  
-  
-        fetch("/api/capi.php",{  
-            method:"POST",  
-            headers:{"Content-Type":"application/json"},  
-            body:JSON.stringify({  
-                user_id: 20,  
-                event_id:eventID,  
-                fbp: fbp,  
-                fbc: fbc,  
-                event_source_url: window.location.href  
-            })  
-        });  
-  
-        // тЬЕ Delay redirect (VERY IMPORTANT)  
-        setTimeout(()=>{  
-            window.open("https://t.me/+fcw26AkfSTkyZGY1","_blank");  
-        }, 700); // 600тАУ800ms best  
-  
-    });  
-}  
-  
-trackJoin("joinBtnTop");  
-  
-</script>
+            <!-- ==========================
+                 WHATSAPP
+                 ========================== -->
+
+            <a
+                href="https://wa.me/917878635906"
+                class="btn whatsapp-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="trackWhatsApp()"
+            >
+
+                <i class="fab fa-whatsapp"></i>
+
+                WhatsApp Support
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         FOOTER
+         ============================== -->
+
+    <div class="footer">
+
+        © 2026 Sara777. All rights reserved.
+
+    </div>
+
+
+
+    <!-- ==============================
+         EVENT FUNCTIONS
+         ============================== -->
+
+    <script>
+
+
+        /*
+         ==========================================
+         APK DOWNLOAD
+
+         Download button click par:
+         Subscribe event fire hoga.
+         ==========================================
+        */
+
+        function trackDownload(event) {
+
+            if (typeof fbq === 'function') {
+
+                fbq(
+                    'track',
+                    'Subscribe',
+                    {
+                        content_name: 'Sara777 APK Download',
+                        content_type: 'application'
+                    }
+                );
+
+            }
+
+            /*
+             Download ko normal tarike se
+             continue hone dete hain.
+            */
+
+            return true;
+        }
+
+
+
+        /*
+         ==========================================
+         WHATSAPP
+
+         WhatsApp button click par Lead event.
+         ==========================================
+        */
+
+        function trackWhatsApp() {
+
+            if (typeof fbq === 'function') {
+
+                fbq(
+                    'track',
+                    'Lead',
+                    {
+                        content_name: 'WhatsApp Support',
+                        content_type: 'contact'
+                    }
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+
 </body>
+
 </html>
